@@ -5,6 +5,9 @@
   "scripts": { "start": "node server.js" },
   "dependencies": {
     "express": "^4.21.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "multer": "^1.4.5",
+    "node-fetch": "^2.6.7",
+    "clarifai-nodejs-grpc": "^1.0.0"
   }
 }

@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nutriscout PWA</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nutriscout</title>
 
-  <link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js")
-        .then(() => console.log("Service Worker registrado"))
-        .catch(err => console.error("Error SW:", err));
-    }
-  </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
 </head>
 
 <body>
-  <h1>Nutriscout</h1>
-  <p>App lista como PWA.</p>
+<h1>Save & Taste</h1>
+
+<input type="file" id="imageInput" accept="image/*" />
+<button id="analyzeBtn">Analizar</button>
+
+<img id="preview" hidden />
+
+<div id="resultado"></div>
+
+<div id="opciones" hidden>
+  <h3>Selecciona el estado del alimento:</h3>
+  <button data-estado="fresco">🟢 Fresco</button>
+  <button data-estado="maduro">🟡 Maduro</button>
+  <button data-estado="pasado">🔴 Pasado</button>
+</div>
+
+<div id="acciones" hidden>
+  <button id="verRecetas">🍴 Ver recetas</button>
+  <button id="verTips">💡 Ver consejos</button>
+</div>
+
+<pre id="respuesta"></pre>
+
+<script src="app.js"></script>
 </body>
 </html>
